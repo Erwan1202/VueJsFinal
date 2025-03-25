@@ -6,7 +6,7 @@ const STATE = {
 };
 
 const cartStore = createStore('cart', STATE, {
-  plugins: [storage({ type: 'local', prefix: 'cart' })], // Persistance dans localStorage
+  plugins: [storage({ type: 'local', prefix: 'cart' })],
 });
 
 export const { state, mutation, action } = cartStore;
