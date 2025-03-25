@@ -1,5 +1,5 @@
 <template>
-    <Layout>
+    <AppLayout>
       <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
         <div v-if="product">
           <div class="flex gap-6">
@@ -20,25 +20,18 @@
         </div>
         <p v-else class="text-center text-gray-500">Chargement du produit...</p>
       </div>
-    </Layout>
+    </AppLayout>
   </template>
   
   <script setup>
-  import { ref, onMounted } from 'vue';
-  import { useRoute } from 'vue-router';
-  import Layout from '@/components/Layout.vue';
-  import { state as cartState, addToCart } from '@/store/cart';
+  import { ref } from 'vue';
+  import AppLayout from '@/components/AppLayout.vue';
+  import { addToCart } from '@/store/cart';
 
   const product = ref(null);
   const quantity = ref(1);
-  const route = useRoute();
   
 
-    const products = [
-      { id: 1, name: 'Vin Rouge Bordeaux', description: 'Un excellent Bordeaux.', price: 15, image: '/images }/bordeaux.jpg' },
-      { id: 2, name: 'Vin Blanc Chardonnay', description: 'Un Chardonnay fruité.', price: 12, image: '/images/chardonnay.jpg' },
-      { id: 3, name: 'Vin Rosé Côtes de Provence', description: 'Un rosé de Provence.', price: 10, image: '/images/cotes-de-provence.jpg' },
-      ];
   
   </script>
 

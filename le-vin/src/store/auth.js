@@ -6,7 +6,7 @@ const STATE = {
 };
 
 const authStore = createStore('auth', STATE, {
-  plugins: [storage({ type: 'local', prefix: 'auth' })], // Persistance dans localStorage
+  plugins: [storage({ type: 'local', prefix: 'auth' })], 
 });
 
 export const { state, getter, mutation, action } = authStore;
@@ -17,12 +17,11 @@ export const setUser = mutation('setUser', (state, user) => {
   state.user = user;
 });
 
-
-export const login = action('login', async ({ mutate }, { email }) => {
-  const user = { email }; 
+export const login = action('login', async ({ commit }, { email }) => {
+  const user = { email };
+  commit(setUser, user); 
 });
 
-
-export const logout = action('logout', ({ mutate }) => {
-  mutate(setUser, null);
+export const logout = action('logout', ({ commit }) => {
+  commit(setUser, null); 
 });

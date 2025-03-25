@@ -1,5 +1,5 @@
 <template>
-    <Layout>
+    <AppLayout>
       <div class="max-w-md mx-auto bg-white shadow-md rounded-lg p-6">
         <h1 class="text-2xl font-semibold text-gray-700">Connexion</h1>
         <form class="mt-4" @submit.prevent="handleLogin">
@@ -8,11 +8,11 @@
           <button class="mt-4 w-full bg-red-600 text-white py-2 rounded">Se connecter</button>
         </form>
       </div>
-    </Layout>
+    </AppLayout>
   </template>
   
   <script setup>
-  import Layout from '@/components/Layout.vue';
+  import AppLayout from '@/components/AppLayout.vue';
   import { ref } from 'vue';
   import { login } from '@/store/auth';
   import { useRouter } from 'vue-router';
